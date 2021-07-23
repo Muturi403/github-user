@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FormComponent } from './form/form.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     HomeComponent,
     UserProfileComponent,
     FormComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    AboutpageComponent
   ],
   imports: [
     BrowserModule,
