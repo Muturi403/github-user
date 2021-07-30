@@ -1,1 +1,125 @@
-<p>user-profile works!</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+<div class="bg-light text-center">
+  <h3>
+    <i class="icon-github"></i>
+    <b>ANGULAR GITHUB USER SEARCH APPLICATION</b>
+  </h3>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="user-profile"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLinkActive='active' routerLink="user-profile">
+            Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item nav-link active" routerLink="/about" routerLinkActive='active'>About
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-form (emitSearch)="searchUser($event)"></app-form>
+    </div>
+  </div>
+</div>
+<div class="container pt-2">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="col">
+        <div class="card" style="width: 18rem">
+          <h5 class="card-title text-center pt-2">USER PROFILE</h5>
+          <img class="card-img-top ml-3" src="{{ user.avatar_url }}" alt="User Profile Image"
+            style="border-radius: 100%; width: 15em; height: 15em; float: left" responsive />
+          <div class="card-body">
+            <p class="card-text" *ngIf="user.name">
+              <b>Name:</b> {{ user.name }}
+            </p>
+            <a href="{{ user.html_url }}" target="blank" class="btn btn-primary">View profile on Github</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-header">
+          <span class="badge badge-pill badge-primary">{{ user.followers }} Followers</span>
+          <span class="badge badge-pill badge-success ml-2">{{ user.public_repos }} Repositories</span>
+          <span class="badge badge-pill badge-warning ml-2">{{ user.public_gists }} Gists</span>
+          <span class="badge badge-pill badge-danger ml-2">{{ user.following }} Following</span>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item" *ngIf="user.name">
+                <b>UserName:</b><span class="font-weight-bold">{{ user.name }}</span>
+              </li>
+              <li class="list-group-item" *ngIf="user.bio">
+                <b>Bio:</b> {{ user.bio }}
+              </li>
+              <li class="list-group-item" *ngIf="user.location">
+                <b>Location:</b><span class="font-weight-bold">{{ user.location }}</span>
+              </li>
+              <li class="list-group-item" *ngIf="user.email">
+                <b>Email Address:</b><span class="font-weight-bold">{{ user.email }}</span>
+              </li>
+              <li class="list-group-item">
+                <b>Number of repos:</b><span class="font-weight-bold"> {{ user.public_repos }}</span>
+              </li>
+              <li class="list-group-item">
+                <b>Has been a member since:</b><span class="font-weight-bold">{{
+                  user.created_at | dateCount
+                }}</span>
+              </li>
+              <li class="list-group-item">
+                <b>Profile URL:</b><a href="{{ user.html_url }}" target="_blank">View profile on Github</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>Repositories</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-5" *ngFor="let repo of repos">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title text-success">
+            {{ repo.name }}
+          </h4>
+        </div>
+        <div class="card-body">
+          <h6 appHighlight class="card-title">{{ repo.description }}</h6>
+          <h6 class="card-title">{{ repo.language }}</h6>
+          <h5 class="card-title">{{ repo.updated_at | date | uppercase }}</h5>
+          <p>This repository was created {{ repo.updated_at | dateCount }}</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="badge badge-success">{{ repo.stargazers_count }}Stars</span>
+        <span class="badge badge-warning ml-2">{{ repo.watchers_count }}Stars</span>
+        <a href="{{ repo.html_url }}" class="btn btn-sm btn-info custom-btn" target="_blank">View On gitHub</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<footer class="bg-dark p-3">
+  <p class="text-center text-white">Copyright &copy; 2020 | Faith Muturi</p>
+</footer>

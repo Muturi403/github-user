@@ -1,1 +1,23 @@
-<p>form works!</p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="card body">
+              <form class="form-inline">
+                <div class="form-group">
+                  <input type="text" class="form-control mr-sm-2" size="50" id="term" [(ngModel)]="term" name="term"
+                    placeholder="Search Github UserName" required>
+                </div>
+                <div>
+                  <input type="submit" value="submit" class="btn btn-secondary btn-sm" (click)="search()">
+                </div>
+              </form>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
