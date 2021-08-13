@@ -3,7 +3,7 @@ import { Repos } from './repos'
 import { Users } from './users'
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
-// import { from } from 'rxjs';
+import { from } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -31,7 +31,7 @@ export class GitsearchService {
 			email: string;
 			public_gists: string
 		}
-		let searchPoint = 'https://api.github.com/users/' + term + '?access_token=' + environment.apiKey;
+		let searchPoint = 'https://api.github.com/users/0' + term + '?access_token=' + environment.apiKey;
 		let promise = new Promise((resolve, reject) => {
 			this.http.get<ApiResponse>(searchPoint).toPromise().then(
 				(results) => {
