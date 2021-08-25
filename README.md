@@ -6,13 +6,13 @@ Faith Muturi
 
 ## Description
 
-A webApp that searchs and displays a Github User information and also their Repositories. One Can also search for other repositories easily without having to go to github
+A webApp that searches and displays a Github User information and also their Repositories. One Can also search for other repositories easily without having to go to github
 
 ## Build/Setup
 
 * Open your terminal
 * Use this command to clone 'https://github.com/Muturi403/github-user.git'
-* This will clone the repositoty into your local folder
+* This will clone the repository into your local folder
 
 ## Technologies Used
 
