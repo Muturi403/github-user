@@ -15,9 +15,6 @@ export class UserProfileComponent implements OnInit {
   term: any;
   gitsearchService: GitsearchService;
   constructor(gitsearchService: GitsearchService)
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
   { this.gitsearchService = gitsearchService }
 
 searchUser(term :string) {
@@ -43,16 +40,3 @@ searchUser(term :string) {
     this.searchUser('Muturi403');
   }
   }
-
-// function searchUser(term: any) {
-//   throw new Error('Function not implemented.');
-// }
-
-// function term(term: any) {
-//   throw new Error('Function not implemented.');
-// }
-
-// function ngOnInit() {
-//   throw new Error('Function not implemented.');
-// }
-
