@@ -36,4 +36,4 @@ exports.config = {
       }
     }));
   // @ts-ignore
-	}
+	}}
