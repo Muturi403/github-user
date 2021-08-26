@@ -11,7 +11,7 @@ import { GitsearchService } from '../gitsearch.service';
 export class UserProfileComponent implements OnInit {
   repos: any = []
   user!: Users;
-  repo!: Repos;
+  repo! : Repos;
   term: any;
   gitsearchService: GitsearchService;
   constructor(gitsearchService: GitsearchService)
@@ -37,6 +37,7 @@ searchUser(term :string) {
 }
 
   ngOnInit(): void {
-    this.searchUser('Muturi403');
+    // this.user = this.gitsearchService.user;
+    this.searchUser('Muturi403')
   }
   }

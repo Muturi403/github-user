@@ -1,7 +1,16 @@
-import { Gitsearch.Service } from './gitsearch.service';
+import { TestBed } from '@angular/core/testing';
+import { GitsearchService } from './gitsearch.service';
 
-describe('Gitsearch.Service', () => {
+describe('GitsearchService', () => {
+
+  let service: GitsearchService;
+
+  beforeEach(() =>{
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(GitsearchService);
+  });
+
   it('should create an instance', () => {
-    expect(new Gitsearch.Service()).toBeTruthy();
+    expect(service).toBeTruthy();
   });
 });

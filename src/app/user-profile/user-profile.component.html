@@ -21,12 +21,13 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item nav-link active" routerLink="/aboutpage" routerLinkActive='active'>About
+        <li class="nav-item nav-link active" routerLink="./aboutpage" routerLinkActive='active'>About
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -34,6 +35,7 @@
     </div>
   </div>
 </div>
+
 <div class="container pt-2">
   <div class="row">
     <div class="col-md-5">
@@ -51,6 +53,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-md-7">
       <div class="card">
         <div class="card-header">
@@ -76,7 +79,7 @@
                 <b>Number of repos:</b><span class="font-weight-bold"> {{ user.public_repos }}</span>
               </li>
               <li class="list-group-item">
-                <b>Has been a member since:</b><span class="font-weight-bold">{{
+                <b>Joined since:</b><span class="font-weight-bold">{{
                   user.created_at | dateCount
                 }}</span>
               </li>
@@ -107,9 +110,10 @@
           <h6 appHighlight class="card-title">{{ repo.description }}</h6>
           <h6 class="card-title">{{ repo.language }}</h6>
           <h5 class="card-title">{{ repo.updated_at | date | uppercase }}</h5>
-          <p>This repository was created {{ repo.updated_at | dateCount }}</p>
+          <p>This repository was created on {{ repo.updated_at | dateCount }}</p>
         </div>
       </div>
+
       <div class="card-footer">
         <span class="badge badge-success">{{ repo.stargazers_count }}Stars</span>
         <span class="badge badge-warning ml-2">{{ repo.watchers_count }}Stars</span>
@@ -120,6 +124,7 @@
 </div>
 <br>
 <br>
+
 <footer class="bg-dark p-3">
-  <p class="text-center text-white">Copyright &copy; 2020 | Faith Muturi</p>
+  <p class="text-center text-white">Copyright &copy; 2021 | Faith Muturi</p>
 </footer>

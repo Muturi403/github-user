@@ -3,8 +3,9 @@ import { Directive, ElementRef, Renderer2, OnInit, HostListener, HostBinding, In
 @Directive({
 	selector: '[appHighlight]'
 })
+
 export class HighlightDirective {
 	constructor(private elem: ElementRef) {
-		this.elem.nativeElement.style.backgroundColor = 'yellow';
+		this.elem.nativeElement.style.backgroundColor = 'purple';
 	}
 }

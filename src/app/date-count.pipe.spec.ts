@@ -1,7 +1,10 @@
-import { DateCount.Pipe } from './date-count.pipe';
+import { DateCountPipe } from './date-count.pipe';
 
-describe('DateCount.Pipe', () => {
+describe('DateCountPipe', () => {
+
   it('should create an instance', () => {
-    expect(new DateCount.Pipe()).toBeTruthy();
+    const pipe = new DateCountPipe();
+    expect(new DateCountPipe()).toBeTruthy();
   });
+  
 });

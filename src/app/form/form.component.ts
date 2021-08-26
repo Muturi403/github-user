@@ -8,11 +8,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class FormComponent implements OnInit {
 
   @Output() emitSearch = new EventEmitter<any>()
-  term!: string;
+  user!: string;
 
   constructor() { }
   search() {
-    this.emitSearch.emit(this.term);
+    this.emitSearch.emit(this.user);
   }
 
   ngOnInit(): void {
